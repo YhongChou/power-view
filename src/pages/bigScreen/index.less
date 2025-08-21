@@ -1,0 +1,122 @@
+@position: absolute;
+@no-repeat: no-repeat;
+
+.screen-bg {
+  background: url('@/assets/images/bg.png') no-repeat center center fixed;
+  background-repeat: @no-repeat;
+  background-size: 100% 100%;
+
+  position: relative;
+
+//   height: calc(100vh - 90px);
+//   overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 76px;
+
+  gap:20px 10px;
+  
+}
+
+
+.top {
+  background-image: url('@/assets/assets/images/bg_header.svg');
+  transform: translateY(21px);
+  height: 56px;
+  width: 100%;
+  background-repeat: @no-repeat;
+  position: absolute;
+  top: -96px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 5px;
+  .left-top {
+    background-image: url('@/assets/assets/images/bg_left_top.svg');
+    // position: @position;
+    background-repeat: @no-repeat;
+
+    // top: 116px;
+    // left: 16px;
+    width: 536px;
+    height: 443px;
+
+    margin-left: 10px;
+  }
+  .left-bottom {
+    // position: @position;
+
+    background-image: url('@/assets/assets/images/bg_left_bottom.svg');
+    background-repeat: @no-repeat;
+
+    // bottom: 49px;
+    // left: 16px;
+    width: 536px;
+    height: 443px;
+  }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+  .right-top {
+    // position: @position;
+
+    background-image: url('@/assets/assets/images/bg_right_top.svg');
+    background-repeat: @no-repeat;
+
+    // right: 17px;
+    // top: 96px;
+    width: 519px;
+    height: 327px;
+  }
+  .right-middle {
+    background-image: url('@/assets/assets/images/bg_right_center.svg');
+    // position: @position;
+    background-repeat: @no-repeat;
+
+    // right: 17px;
+    // top: 443px;
+    width: 519px;
+    height: 327px;
+  }
+  .right-bottom {
+    background-image: url('@/assets/assets/images/bg_right_bottom.svg');
+    // position: @position;
+    background-repeat: @no-repeat;
+
+    // right: 17px;
+    // bottom: 49px;
+    width: 519px;
+    height: 242px;
+  }
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+  .center-top {
+    // position: @position;
+    background-repeat: @no-repeat;
+
+    // right: 540px;
+    // bottom: 272px;
+    width: 823px;
+    height: 710px;
+  }
+
+  .center-bottom {
+    background-image: url('@/assets/assets/images/bg_bottom.svg');
+    // position: @position;
+    background-repeat: @no-repeat;
+
+    // right: 540px;
+    // bottom: 49px;
+    width: 823px;
+    height: 209px;
+  }
+}

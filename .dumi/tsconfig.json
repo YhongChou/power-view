@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    // "jsx": "react-jsx", // React 17+ 推荐值
+    "esModuleInterop": true // 必须为 true
+  },
+  "extends": "../tsconfig.json",
+  "include": [
+    "**/*"
+  ]
+
+}

@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true, // 允许未使用的局部变量，默认为false
+    "noUnusedParameters": true, // 允许未使用的函数参数，默认为false
+    // "erasableSyntaxOnly": true, // 允许使用可擦除的语法，默认为false,如enum类型会报错
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    "noImplicitAny": true, // 禁止隐式的 any 类型
+
+    // 混用js
+    "allowJs": true, // 允许 TypeScript 编译器处理 JS 文件
+    "checkJs": false, // 不对js做类型检查,
+    "jsx": "react-jsx",
+
+    // 路径别名配置
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/stores/*": ["src/stores/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/types/*": ["src/types/*"],
+      "@/api/*": ["src/api/*"],
+      "@/services/*": ["src/services/*"],
+      "@/router/*": ["src/router/*"],
+      "@/assets/*": ["src/assets/*"],
+      "@public/*": ["public/*"]
+    }
+  },
+  // "include": ["src"],
+  "include": ["src", "src/types", "src/eslint/.rules"],
+  "exclude": ["node_modules", "scripts"]
+}
