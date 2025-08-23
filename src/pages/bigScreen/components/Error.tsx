@@ -1,28 +1,24 @@
-
 import { useEffect, useState } from 'react';
 import './error.less';
 import { getErrorMonitor } from '../../../api';
 import type { ExceptionMonitoringDataType } from '../../../api/data';
 
 const Error = () => {
-
- const [data, setData] = useState<ExceptionMonitoringDataType>([]);
+  const [data, setData] = useState<ExceptionMonitoringDataType>([]);
 
   useEffect(() => {
-    getErrorMonitorData()
+    getErrorMonitorData();
   }, []);
 
   async function getErrorMonitorData() {
     console.log('getErrorMonitorData');
     const res = await getErrorMonitor();
     if (res.code === 200) {
-     setData(res.data);
+      setData(res.data);
     }
-   
   }
-  
-  console.log(data);
 
+  console.log(data);
 
   return (
     <div className='error-svg'>
@@ -30,8 +26,9 @@ const Error = () => {
         id='yichang'
         xmlns='http://www.w3.org/2000/svg'
         xmlnsXlink='http://www.w3.org/1999/xlink'
-        width='456'
-        height='127'
+        width='100%'
+        height='100%'
+        preserveAspectRatio='none'
         viewBox='0 0 456 127'>
         <defs>
           <linearGradient

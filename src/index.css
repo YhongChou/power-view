@@ -8,10 +8,5 @@
   --secondary-container: #e8def8;
   --on-secondary-container: #625b71;
 
-  width: 100vw;
-  height: 100vh;
-  min-width:  100vw;
-  min-height: 100vh;
-  /* height: calc(100vh - 90px); */
-  /* overflow: hidden; */
+
 }

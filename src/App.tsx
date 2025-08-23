@@ -6,7 +6,6 @@ import zhCN from 'antd/locale/zh_CN';
 const App = () => {
   return (
     <ConfigProvider locale={zhCN}>
-    
         <AppContainer component={false}>
           <RouterProvider router={router} />
         </AppContainer>

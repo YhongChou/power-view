@@ -1,21 +1,19 @@
-import  { useEffect } from 'react';
+import { useEffect } from 'react';
 import './ball.less';
 
 const Ball = () => {
-
   useEffect(() => {
     animate();
   }, []);
 
   function animate() {
-
     let count: HTMLElement | null = document.getElementById('count');
     let water: HTMLElement | null = document.getElementById('water');
 
     let currentP = 0;
     let targetP = 100;
 
-    let timer: number | undefined;
+    let timer: ReturnType<typeof setInterval> | undefined;
 
     timer = setInterval(function () {
       currentP++;
@@ -59,11 +57,13 @@ const Ball = () => {
           className='water'>
           <svg
             viewBox='0 0 560 20'
+            preserveAspectRatio='none'
             className='water_wave water_wave_back'>
             <use xlinkHref='#wave'></use>
           </svg>
           <svg
             viewBox='0 0 560 20'
+            preserveAspectRatio='none'
             className='water_wave water_wave_front'>
             <use xlinkHref='#wave'></use>
           </svg>

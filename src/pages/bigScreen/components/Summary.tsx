@@ -1,5 +1,17 @@
 import { useEffect } from 'react';
-import light_0_1 from '@/assets/images/center/light_0_1.png'
+import light_0_1 from '@/assets/images/center/light_0_1.png';
+import light_0_2 from '@/assets/images/center/light_0_2.png';
+import light_0_3 from '@/assets/images/center/light_0_3.png';
+import image1 from '@/assets/images/center/image-1.png';
+import image2 from '@/assets/images/center/image-2.png';
+import star from '@/assets/images/center/star.png';
+import location from '@/assets/images/center/location.png';
+import pie from '@/assets/images/center/pie.png';
+import earth from '@/assets/images/center/earth.png';
+import hot from '@/assets/images/center/hot.png';
+import home from '@/assets/images/center/home.png';
+import house from '@/assets/images/center/house.png';
+import dots28 from '@/assets/images/center/dots28.png';
 import gsap from 'gsap';
 
 import './summary.less';
@@ -47,8 +59,9 @@ const Summary = () => {
         data-name='dongxiao'
         xmlns='http://www.w3.org/2000/svg'
         xmlnsXlink='http://www.w3.org/1999/xlink'
-        width='787.781'
-        height='652'
+        width='100%'
+        height='100%'
+        preserveAspectRatio='none'
         viewBox='0 0 787.781 652'>
         {/* todo */}
         <rect
@@ -919,13 +932,13 @@ const Summary = () => {
             id='image'
             width='23'
             height='23'
-            xlinkHref='@/assets/images/center/image-1.png'
+            xlinkHref={image1}
           />
           <image
             id='image-2'
             width='15'
             height='15'
-            xlinkHref='@/assets/images/center/image-2.png'
+            xlinkHref={image2}
           />
         </defs>
         <g id='dongxiao1'>
@@ -961,7 +974,7 @@ const Summary = () => {
               y='-3'
               width='112'
               height='112'
-              xlinkHref='@/assets/images/center/star.png'
+              xlinkHref={star}
             />
             <path
               id='base_o-2'
@@ -999,7 +1012,7 @@ const Summary = () => {
               y='287'
               width='106'
               height='107'
-              xlinkHref='@/assets/images/center/location.png'
+              xlinkHref={location}
             />
             <path
               id='base_o-3'
@@ -1037,7 +1050,7 @@ const Summary = () => {
               y='194'
               width='107'
               height='108'
-              xlinkHref='@/assets/images/center/pie.png'
+              xlinkHref={pie}
             />
             <path
               id='base_o-4'
@@ -1075,7 +1088,7 @@ const Summary = () => {
               y='460'
               width='111'
               height='112'
-              xlinkHref='@/assets/images/center/earth.png'
+              xlinkHref={earth}
             />
             <path
               id='base_o-5'
@@ -1113,7 +1126,7 @@ const Summary = () => {
               y='495'
               width='105'
               height='105'
-              xlinkHref='@/assets/images/center/hot.png'
+              xlinkHref={hot}
             />
             <path
               id='base_o-6'
@@ -1151,7 +1164,7 @@ const Summary = () => {
               y='17'
               width='103'
               height='103'
-              xlinkHref='@/assets/images/center/home.png'
+              xlinkHref={home}
             />
           </g>
           <g id='circle'>
@@ -1181,7 +1194,7 @@ const Summary = () => {
               y='324'
               width='72'
               height='92'
-              xlinkHref='@/assets/images/center/light_0_3.png'
+              xlinkHref={light_0_3}
             />
             <image
               id='light_o_2'
@@ -1189,7 +1202,7 @@ const Summary = () => {
               y='261'
               width='99'
               height='137'
-              xlinkHref='@/assets/images/center/light_0_2.png'
+              xlinkHref={light_0_2}
             />
             <image
               id='light_o_1'
@@ -1206,7 +1219,7 @@ const Summary = () => {
             y='120'
             width='539'
             height='419'
-            xlinkHref='@/assets/images/center/house.png'
+            xlinkHref={house}
           />
           <g id='right'>
             <g
@@ -1287,7 +1300,7 @@ const Summary = () => {
                   y='91'
                   width='22'
                   height='23'
-                  xlinkHref='./../../../assets/images/center/dots28.png'
+                  xlinkHref={dots28}
                 />
                 <circle
                   id='dots27'
@@ -1502,7 +1515,7 @@ const Summary = () => {
           </g>
           {[1, 2, 3].map((item) => (
             <circle
-            key={item}
+              key={item}
               id={`circle-${item}`}
               rx='0'
               ry='0'

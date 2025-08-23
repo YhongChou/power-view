@@ -1,18 +1,17 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import type { RouteConfig } from '../../router/config';
-// import logo from './../../assets/logo.png';
 
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 const BigScreenLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (location.pathname.includes('bigScreen')) {
-      document.querySelector('body')?.classList.add('big-screen-body');
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   if (location.pathname.includes('bigScreen')) {
+  //     document.querySelector('body')?.classList.add('big-screen-body');
+  //   }
+  // }, [location]);
 
   const routeToMenu = (routes: RouteConfig[]): RouteConfig[] => {
     return routes.map((route: RouteConfig) => {
@@ -28,7 +27,15 @@ const BigScreenLayout = () => {
   };
 
   return (
+    <div
+      style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: ' translate(-50%, -50%)',
+      }}>
       <Outlet />
+    </div>
   );
 };
 
