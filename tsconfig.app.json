@@ -16,8 +16,8 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true, // 允许未使用的局部变量，默认为false
-    "noUnusedParameters": true, // 允许未使用的函数参数，默认为false
+    "noUnusedLocals": false, // 改为 false，允许未使用的局部变量
+    "noUnusedParameters": false, // 改为 false，允许未使用的函数参数
     // "erasableSyntaxOnly": true, // 允许使用可擦除的语法，默认为false,如enum类型会报错
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
