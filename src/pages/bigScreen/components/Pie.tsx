@@ -1,28 +1,23 @@
-
-
-import type { CommonChartProps } from '../../../components/CommonChat';
-import CommonChart from '../../../components/CommonChat';
-// import { pieData } from '../../../api/data';
-import type  { PieDataType } from '../../../api/data';
-
+import type { CommonChartProps } from '@/components/CommonChat';
+import CommonChart from '@/components/CommonChat';
+import type { PieDataType } from '@/api/data';
 import { useEffect, useMemo, useState } from 'react';
-import { getPieData } from '../../../api';
+import { getPieData } from '@/api';
 
 const PieChart: React.FC = () => {
-
   const [pieData, setPieData] = useState<PieDataType>([]);
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
   const options = useMemo(() => {
-    return  {
+    return {
       title: {
-        text: `{textStyle|饼图示例}`,
+        text: `{textStyle|销量}`,
         top: '45%',
-        left: '25%',
-        subtext: `{subTextStyle|销量&服装}`,
+        left: '30%',
+        subtext: `{subTextStyle|品牌&销量}`,
         textStyle: {
           rich: {
             textStyle: {
@@ -34,7 +29,7 @@ const PieChart: React.FC = () => {
         subtextStyle: {
           rich: {
             subTextStyle: {
-              padding: [0, 10, 0, 10],
+              // padding: [0, 10, 0, 10],
             },
           },
         },
@@ -47,7 +42,7 @@ const PieChart: React.FC = () => {
         right: '5%',
         top: 'center',
         formatter: function (name: string) {
-          const item = pieData.find((item) => item.name === name);
+          const item = pieData.find(item => item.name === name);
           return `{nameStyle|${item?.name}}\n{saleStyle|销量：${item?.value}件}\n`;
         },
         textStyle: {
@@ -87,23 +82,18 @@ const PieChart: React.FC = () => {
     };
   }, [pieData]);
 
-  
-  async function fetchData() { 
+  async function fetchData() {
     const res = await getPieData();
     if (res.code === 200) {
       setPieData(res.data);
     }
   }
 
-    const initOption: CommonChartProps['initOption'] = {
-        renderer: 'svg',
-    }
-  
+  const initOption: CommonChartProps['initOption'] = {
+    renderer: 'svg',
+  };
 
-    return (
-      <CommonChart initOption={initOption} option={options}/>
-
-  );
+  return <CommonChart initOption={initOption} option={options} />;
 };
 
 export default PieChart;

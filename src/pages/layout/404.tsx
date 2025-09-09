@@ -1,7 +1,7 @@
-import { Link, useRouteError } from 'react-router-dom'
+import { Link, useRouteError } from 'react-router-dom';
 
 const NotFound = () => {
-  const error:any = useRouteError()
+  const error: any = useRouteError();
   return (
     <div
       style={{
@@ -12,14 +12,15 @@ const NotFound = () => {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '20px',
-      }}>
+      }}
+    >
       <h1>Oops!</h1>
       <p>
         <i>{error?.statusText || error?.message}</i>
       </p>
-      <Link to='/activity'> 返回番茄种植</Link>
+      <Link to="/activity"> 返回大屏首页</Link>
     </div>
   );
-}
+};
 
-export default NotFound
+export default NotFound;

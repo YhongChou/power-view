@@ -17,7 +17,7 @@
             <polyline id="bottom_left" stroke="#00A2FF" stroke-width="2" points="33.975 236.971 5.991 236.971 5.991 208.987"></polyline>
             <polyline id="bottom_left-copy" stroke="#00A2FF" stroke-width="2" transform="translate(497.992000, 222.992000) scale(-1, 1) translate(-497.992000, -222.992000) " points="511.984 236.984 484 236.984 484 209"></polyline>
             <text id="text-copy-4" fill="url(#linearGradient-1)" font-family="SourceHanSansCN-Medium, Source Han Sans CN" font-size="22" font-weight="400">
-                <tspan x="36" y="35">异常监控</tspan>
+                <tspan x="36" y="35">站点异常监控</tspan>
             </text>
         </g>
     </g>

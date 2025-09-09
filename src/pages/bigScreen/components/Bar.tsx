@@ -1,19 +1,19 @@
-import  { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import CommonChart, {
   type CommonChartProps,
 } from '../../../components/CommonChat';
-import type { PieDataType } from '../../../api/data';
-import { getPieData } from '../../../api';
+import type { BarDataType } from '../../../api/data';
+import { getBarData } from '../../../api';
 
 const Bar = () => {
-  const [data, setData] = useState<PieDataType>([]);
+  const [data, setData] = useState<BarDataType>([]);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const options: CommonChartProps['option'] = useMemo(() => {
-    const cat = data.map((item) => item.name);
+    const cat = data.map(item => item.name);
     return {
       gird: {
         top: '20%',
@@ -36,11 +36,10 @@ const Bar = () => {
         axisLabel: {
           show: true,
           color: 'white',
-            ellipsis: '...',
-            showMinLabel: true,
-            rotate: -30,
-            overflow: 'truncate',
-         
+          ellipsis: '...',
+          showMinLabel: true,
+          rotate: -30,
+          overflow: 'truncate',
         },
         nameTextStyle: {
           color: 'white',
@@ -104,7 +103,7 @@ const Bar = () => {
   }, [data]);
 
   async function fetchData() {
-    const res = await getPieData();
+    const res = await getBarData();
     if (res.code === 200) {
       setData(res.data);
     }

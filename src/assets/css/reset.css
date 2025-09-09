@@ -94,5 +94,5 @@ body {
   overflow: hidden;
 
   background: url('@/assets/images/bg.png') ;
-  background-size: contain;
+  background-size: cover
 }

@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import type { RouteConfig } from '../../router/config';
+import type { RouteConfig } from '@/router/config';
 
 // import { useEffect } from 'react';
 
@@ -33,7 +33,8 @@ const BigScreenLayout = () => {
         left: '50%',
         top: '50%',
         transform: ' translate(-50%, -50%)',
-      }}>
+      }}
+    >
       <Outlet />
     </div>
   );

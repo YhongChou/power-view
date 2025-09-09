@@ -60,11 +60,9 @@ const Index: React.FC = () => {
             <div
               key={index}
               className={`${styles.btnItem} ${btnClassHandle(item.num)}`}
-              onClick={() => btnLinkHandle(item.urlKey)}>
-              <img
-                src={getImageUrl(item.url)}
-                alt=''
-              />
+              onClick={() => btnLinkHandle(item.urlKey)}
+            >
+              <img src={getImageUrl(item.url)} alt="" />
             </div>
           ))}
         </div>

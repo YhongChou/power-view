@@ -1,6 +1,6 @@
 export const noYaZaiVars = {
   meta: {},
-  create: function (context) {
+  create: function (_context) {
     return {
       Identifier(node) {
         // 检查astIdentifier 标识符节点
@@ -12,7 +12,7 @@ export const noYaZaiVars = {
         //     message: 'Variable names starting with "yazai" are not allowed.',
         //   });
         // }
-      }
+      },
     };
   },
-}
+};

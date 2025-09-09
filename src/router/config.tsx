@@ -1,5 +1,3 @@
-import { Suspense } from 'react';
-import type { FC } from 'react';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import type { RouteObject } from 'react-router-dom';
 
@@ -12,11 +10,10 @@ export type RouteConfig = {
 } & RouteObject &
   Partial<MenuDataItem>;
 
-
 export function createAuthRoute(routes: RouteConfig[]) {
-  return routes.map((route) => {
+  return routes.map(route => {
     const { permission = true, ...restProps } = route;
-    let routeFormat: RouteConfig = {
+    const routeFormat: RouteConfig = {
       ...route,
     };
     if (permission) {

@@ -14,7 +14,7 @@ const CommonChart: React.FC<
   {
     children?: React.ReactNode;
   } & CommonChartProps
-> = (props) => {
+> = props => {
   const {
     theme = null,
     initOption = {
@@ -60,14 +60,19 @@ const CommonChart: React.FC<
     chartRef.current = null;
   };
 
-  const resize = _.debounce(function() {
-     chartRef?.current?.resize()
+  const resize = _.debounce(function () {
+    chartRef?.current?.resize();
   }, 100);
 
   return (
     <div
       ref={domRef}
-      style={{ width: '100%', height: '100%' }}>
+      style={{
+        width: '100%',
+        height: 'calc(100% - 42px)',
+        paddingTop: '42px',
+      }}
+    >
       {props?.children}
     </div>
   );

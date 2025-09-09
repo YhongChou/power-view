@@ -1,42 +1,532 @@
-
 export const pieData = [
-  // { value: 1048, name: 'Search ' },
-  // { value: 735, name: 'Direct' },
-  // { value: 580, name: 'Email' },
-  // { value: 484, name: 'Union ' },
-  // { value: 300, name: 'Video  ' },
-  { value: 1048, name: 'Search Engine' },
-  { value: 735, name: 'Direct' },
-  { value: 580, name: 'Email' },
-  { value: 484, name: 'Union Ads' },
-  { value: 300, name: 'Video Ads' },
+  { value: 1048, name: '用户搜索' },
+  { value: 735, name: '直接访问' },
+  { value: 580, name: '邮件营销' },
+  { value: 484, name: '联盟广告' },
+  { value: 300, name: '视频广告' },
 ];
 
 // 异常监控
 export const exceptionMonitoringData = [
   {
-      "id": 1,
-      "name": "异常1",
-      "value": 5,
-      "dur": "10s",
-      "begin": "0s"
+    id: 1,
+    name: '异常1',
+    value: 5,
+    dur: '10s',
+    begin: '0s',
   },
   {
-      "id": 2,
-      "name": "异常2",
-      "value": 3,
-      "dur": "10s",
-      "begin": "-3s"
+    id: 2,
+    name: '异常2',
+    value: 3,
+    dur: '10s',
+    begin: '-3s',
   },
   {
-      "id": 3,
-      "name": "异常3",
-      "value": 5,
-      "dur": "10s",
-      "begin": "-5s"
-  }
-]
+    id: 3,
+    name: '异常3',
+    value: 5,
+    dur: '10s',
+    begin: '-5s',
+  },
+];
 
-export type PieDataType = typeof pieData
+// 柱状图数据
+export const barData = [
+  { value: 120, name: '用户搜索' },
+  { value: 200, name: '直接访问' },
+  { value: 150, name: '邮件营销' },
+  { value: 80, name: '联盟广告' },
+  { value: 70, name: '视频广告' },
+  { value: 110, name: '百度' },
+  { value: 130, name: '谷歌' },
+];
 
-export type ExceptionMonitoringDataType = typeof exceptionMonitoringData
+// 折线图数据 - 多系列数据
+export const lineData = {
+  categories: [
+    '1月',
+    '2月',
+    '3月',
+    '4月',
+    '5月',
+    '6月',
+    '7月',
+    '8月',
+    '9月',
+    '10月',
+    '11月',
+    '12月',
+  ],
+  series: [
+    {
+      name: '第一季度',
+      data: [
+        { name: '1月', value: 10 },
+        { name: '2月', value: 20 },
+        { name: '3月', value: 30 },
+        { name: '4月', value: 25 },
+        { name: '5月', value: 35 },
+        { name: '6月', value: 40 },
+        { name: '7月', value: 45 },
+        { name: '8月', value: 50 },
+        { name: '9月', value: 55 },
+        { name: '10月', value: 60 },
+        { name: '11月', value: 65 },
+        { name: '12月', value: 70 },
+      ],
+    },
+    {
+      name: '第二季度',
+      data: [
+        { name: '1月', value: 15 },
+        { name: '2月', value: 25 },
+        { name: '3月', value: 35 },
+        { name: '4月', value: 30 },
+        { name: '5月', value: 40 },
+        { name: '6月', value: 45 },
+        { name: '7月', value: 50 },
+        { name: '8月', value: 55 },
+        { name: '9月', value: 60 },
+        { name: '10月', value: 65 },
+        { name: '11月', value: 70 },
+        { name: '12月', value: 75 },
+      ],
+    },
+  ],
+};
+
+// 计数面板数据
+export const countPanelData = [
+  {
+    id: 1,
+    title: '总用户数(人)',
+    totalNum: 125.6,
+    unit: '万',
+    percentage: 12.5,
+    isUp: true,
+  },
+  {
+    id: 2,
+    title: '日活跃用户(人)',
+    totalNum: 89.3,
+    unit: '万',
+    percentage: 8.7,
+    isUp: true,
+  },
+  {
+    id: 3,
+    title: '月活跃用户(人)',
+    totalNum: 156.8,
+    unit: '万',
+    percentage: -2.3,
+    isUp: false,
+  },
+  {
+    id: 4,
+    title: '新增用户(人)',
+    totalNum: 23.4,
+    unit: '万',
+    percentage: 15.2,
+    isUp: true,
+  },
+];
+
+// 水球图数据
+export const ballData = [
+  {
+    id: 1,
+    title: '系统使用率',
+    percentage: 75,
+    color: '#01B1FF',
+  },
+  {
+    id: 2,
+    title: '内存使用率',
+    percentage: 60,
+    color: '#20FF89',
+  },
+  {
+    id: 3,
+    title: 'CPU使用率',
+    percentage: 85,
+    color: '#EA9502',
+  },
+  {
+    id: 4,
+    title: '磁盘使用率',
+    percentage: 45,
+    color: '#FF6B6B',
+  },
+];
+
+// 地图数据
+export const mapData = [
+  { name: '北京', value: 177 },
+  { name: '上海', value: 42 },
+  { name: '广州', value: 102 },
+  { name: '深圳', value: 81 },
+  { name: '杭州', value: 47 },
+  { name: '南京', value: 35 },
+  { name: '成都', value: 68 },
+  { name: '武汉', value: 52 },
+  { name: '西安', value: 38 },
+  { name: '重庆', value: 45 },
+];
+
+// 雷达图数据
+export const radarData = {
+  indicator: [
+    { name: '销售', max: 100 },
+    { name: '管理', max: 100 },
+    { name: '信息技术', max: 100 },
+    { name: '客服', max: 100 },
+    { name: '研发', max: 100 },
+    { name: '市场', max: 100 },
+  ],
+  series: [
+    {
+      name: '预算分配',
+      data: [
+        {
+          value: [50, 60, 70, 80, 90, 40],
+          name: '预算分配',
+        },
+      ],
+    },
+    {
+      name: '实际开销',
+      data: [
+        {
+          value: [40, 50, 60, 70, 80, 30],
+          name: '实际开销',
+        },
+      ],
+    },
+  ],
+};
+
+// 仪表盘数据
+export const gaugeData = [
+  {
+    name: '速度',
+    value: 70,
+    unit: 'km/h',
+    min: 0,
+    max: 200,
+  },
+  {
+    name: '温度',
+    value: 25,
+    unit: '°C',
+    min: -20,
+    max: 50,
+  },
+  {
+    name: '压力',
+    value: 80,
+    unit: 'Pa',
+    min: 0,
+    max: 100,
+  },
+];
+
+// 散点图数据
+export const scatterData = [
+  [10.0, 8.04],
+  [8.0, 6.95],
+  [13.0, 7.58],
+  [9.0, 8.81],
+  [11.0, 8.33],
+  [14.0, 9.96],
+  [6.0, 7.24],
+  [4.0, 4.26],
+  [12.0, 10.84],
+  [7.0, 4.82],
+  [5.0, 5.68],
+  [15.0, 12.0],
+  [16.0, 11.5],
+  [18.0, 13.2],
+  [20.0, 14.8],
+];
+
+// 热力图数据
+export const heatmapData = {
+  xAxis: [
+    '12a',
+    '1a',
+    '2a',
+    '3a',
+    '4a',
+    '5a',
+    '6a',
+    '7a',
+    '8a',
+    '9a',
+    '10a',
+    '11a',
+    '12p',
+    '1p',
+    '2p',
+    '3p',
+    '4p',
+    '5p',
+    '6p',
+    '7p',
+    '8p',
+    '9p',
+    '10p',
+    '11p',
+  ],
+  yAxis: [
+    'Saturday',
+    'Friday',
+    'Thursday',
+    'Wednesday',
+    'Tuesday',
+    'Monday',
+    'Sunday',
+  ],
+  data: [
+    [0, 0, 5],
+    [0, 1, 1],
+    [0, 2, 0],
+    [0, 3, 0],
+    [0, 4, 0],
+    [0, 5, 0],
+    [0, 6, 0],
+    [0, 7, 0],
+    [0, 8, 0],
+    [0, 9, 0],
+    [0, 10, 0],
+    [0, 11, 2],
+    [0, 12, 4],
+    [0, 13, 1],
+    [0, 14, 1],
+    [0, 15, 3],
+    [0, 16, 4],
+    [0, 17, 6],
+    [0, 18, 4],
+    [0, 19, 4],
+    [0, 20, 3],
+    [0, 21, 3],
+    [0, 22, 2],
+    [0, 23, 5],
+    [1, 0, 7],
+    [1, 1, 0],
+    [1, 2, 0],
+    [1, 3, 0],
+    [1, 4, 0],
+    [1, 5, 0],
+    [1, 6, 0],
+    [1, 7, 0],
+    [1, 8, 0],
+    [1, 9, 0],
+    [1, 10, 5],
+    [1, 11, 2],
+    [1, 12, 2],
+    [1, 13, 6],
+    [1, 14, 9],
+    [1, 15, 11],
+    [1, 16, 6],
+    [1, 17, 7],
+    [1, 18, 8],
+    [1, 19, 12],
+    [1, 20, 5],
+    [1, 21, 5],
+    [1, 22, 7],
+    [1, 23, 2],
+    [2, 0, 1],
+    [2, 1, 1],
+    [2, 2, 0],
+    [2, 3, 0],
+    [2, 4, 0],
+    [2, 5, 0],
+    [2, 6, 0],
+    [2, 7, 0],
+    [2, 8, 0],
+    [2, 9, 0],
+    [2, 10, 3],
+    [2, 11, 2],
+    [2, 12, 1],
+    [2, 13, 9],
+    [2, 14, 8],
+    [2, 15, 10],
+    [2, 16, 6],
+    [2, 17, 5],
+    [2, 18, 5],
+    [2, 19, 5],
+    [2, 20, 7],
+    [2, 21, 4],
+    [2, 22, 2],
+    [2, 23, 4],
+    [3, 0, 7],
+    [3, 1, 3],
+    [3, 2, 0],
+    [3, 3, 0],
+    [3, 4, 0],
+    [3, 5, 0],
+    [3, 6, 0],
+    [3, 7, 0],
+    [3, 8, 1],
+    [3, 9, 0],
+    [3, 10, 5],
+    [3, 11, 4],
+    [3, 12, 7],
+    [3, 13, 14],
+    [3, 14, 13],
+    [3, 15, 12],
+    [3, 16, 9],
+    [3, 17, 5],
+    [3, 18, 5],
+    [3, 19, 10],
+    [3, 20, 6],
+    [3, 21, 4],
+    [3, 22, 6],
+    [3, 23, 6],
+    [4, 0, 1],
+    [4, 1, 3],
+    [4, 2, 0],
+    [4, 3, 0],
+    [4, 4, 0],
+    [4, 5, 1],
+    [4, 6, 0],
+    [4, 7, 0],
+    [4, 8, 0],
+    [4, 9, 2],
+    [4, 10, 4],
+    [4, 11, 4],
+    [4, 12, 2],
+    [4, 13, 4],
+    [4, 14, 4],
+    [4, 15, 14],
+    [4, 16, 12],
+    [4, 17, 1],
+    [4, 18, 8],
+    [4, 19, 5],
+    [4, 20, 3],
+    [4, 21, 7],
+    [4, 22, 3],
+    [4, 23, 1],
+    [5, 0, 2],
+    [5, 1, 1],
+    [5, 2, 0],
+    [5, 3, 3],
+    [5, 4, 0],
+    [5, 5, 0],
+    [5, 6, 0],
+    [5, 7, 0],
+    [5, 8, 2],
+    [5, 9, 0],
+    [5, 10, 4],
+    [5, 11, 1],
+    [5, 12, 5],
+    [5, 13, 10],
+    [5, 14, 5],
+    [5, 15, 7],
+    [5, 16, 11],
+    [5, 17, 6],
+    [5, 18, 0],
+    [5, 19, 5],
+    [5, 20, 3],
+    [5, 21, 4],
+    [5, 22, 2],
+    [5, 23, 0],
+    [6, 0, 1],
+    [6, 1, 0],
+    [6, 2, 0],
+    [6, 3, 0],
+    [6, 4, 0],
+    [6, 5, 0],
+    [6, 6, 0],
+    [6, 7, 0],
+    [6, 8, 0],
+    [6, 9, 0],
+    [6, 10, 1],
+    [6, 11, 0],
+    [6, 12, 2],
+    [6, 13, 1],
+    [6, 14, 3],
+    [6, 15, 4],
+    [6, 16, 0],
+    [6, 17, 0],
+    [6, 18, 0],
+    [6, 19, 0],
+    [6, 20, 1],
+    [6, 21, 2],
+    [6, 22, 2],
+    [6, 23, 6],
+  ],
+};
+
+// 树图数据
+export const treeData = {
+  name: '根节点',
+  children: [
+    {
+      name: '产品部',
+      value: 100,
+      children: [
+        { name: '产品经理', value: 30 },
+        { name: 'UI设计师', value: 20 },
+        { name: '交互设计师', value: 15 },
+        { name: '产品运营', value: 35 },
+      ],
+    },
+    {
+      name: '技术部',
+      value: 150,
+      children: [
+        { name: '前端开发', value: 50 },
+        { name: '后端开发', value: 60 },
+        { name: '测试工程师', value: 25 },
+        { name: '运维工程师', value: 15 },
+      ],
+    },
+    {
+      name: '市场部',
+      value: 80,
+      children: [
+        { name: '市场推广', value: 30 },
+        { name: '商务合作', value: 25 },
+        { name: '品牌运营', value: 25 },
+      ],
+    },
+  ],
+};
+
+// 桑基图数据
+export const sankeyData = {
+  nodes: [
+    { name: '产品' },
+    { name: '技术' },
+    { name: '市场' },
+    { name: '销售' },
+    { name: '客服' },
+    { name: '用户' },
+  ],
+  links: [
+    { source: '产品', target: '技术', value: 10 },
+    { source: '产品', target: '市场', value: 8 },
+    { source: '技术', target: '销售', value: 6 },
+    { source: '技术', target: '客服', value: 4 },
+    { source: '市场', target: '销售', value: 5 },
+    { source: '市场', target: '用户', value: 3 },
+    { source: '销售', target: '用户', value: 8 },
+    { source: '客服', target: '用户', value: 2 },
+  ],
+};
+
+export type PieDataType = typeof pieData;
+export type BarDataType = typeof barData;
+export type LineDataType = typeof lineData;
+export type CountPanelDataType = typeof countPanelData;
+export type BallDataType = typeof ballData;
+export type MapDataType = typeof mapData;
+export type RadarDataType = typeof radarData;
+export type GaugeDataType = typeof gaugeData;
+export type ScatterDataType = typeof scatterData;
+export type HeatmapDataType = typeof heatmapData;
+export type TreeDataType = typeof treeData;
+export type SankeyDataType = typeof sankeyData;
+export type ExceptionMonitoringDataType = typeof exceptionMonitoringData;

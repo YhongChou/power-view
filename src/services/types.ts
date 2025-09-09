@@ -1,5 +1,5 @@
 export type Result<T = any> = {
-  code:number
+  code: number;
   data: T;
   message: string;
 };

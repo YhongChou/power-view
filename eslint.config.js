@@ -5,6 +5,8 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import { globalIgnores } from 'eslint/config';
 import unusedImports from 'eslint-plugin-unused-imports';
+import prettier from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 // import { eslintPluginYazai} from './src/eslint/plugins/eslint-plugin-yazai.js';
 
 export default tseslint.config([
@@ -24,7 +26,6 @@ export default tseslint.config([
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
     },
-    overrides: [],
   },
   {
     files: ['**/*.{js,jsx}'],
@@ -38,10 +39,15 @@ export default tseslint.config([
       globals: globals.browser,
     },
     rules: {},
-    overrides: [],
   },
   {
-    extends: ['plugin:prettier/recommended'],
+    extends: [prettierConfig],
+    plugins: {
+      prettier: prettier,
+    },
+    rules: {
+      'prettier/prettier': 'error',
+    },
   },
   {
     plugins: {
@@ -57,6 +63,17 @@ export default tseslint.config([
           varsIgnorePattern: '^_',
           args: 'after-used',
           argsIgnorePattern: '^_',
+        },
+      ],
+      // 导入排序规则（基础版本，不依赖 eslint-plugin-import）
+      'sort-imports': [
+        'error',
+        {
+          ignoreCase: false,
+          ignoreDeclarationSort: true, // 让其他工具处理声明排序
+          ignoreMemberSort: false,
+          memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+          allowSeparatedGroups: true,
         },
       ],
     },

@@ -4,13 +4,13 @@ export type ScreenOption = {
   screenWidth?: number;
   screenHeight?: number;
   targetRatio?: number;
-  scaleDom?: HTMLElement | null
+  scaleDom?: HTMLElement | null;
 };
 
 export function scalePage(option?: ScreenOption) {
   const resize = _.throttle(triggerScalePage, 100);
 
-  const scaleDom   = option?.scaleDom || document.body
+  const scaleDom = option?.scaleDom || document.body;
 
   function on() {
     // 为window对象添加一个事件监听器，监听resize事件
@@ -27,10 +27,13 @@ export function scalePage(option?: ScreenOption) {
     const targetRatio = option?.targetRatio || 16 / 9;
 
     const screenWidth =
-      window.innerWidth || document.documentElement.clientWidth ||
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
       document.body.clientWidth;
     const screenHeight =
-      window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
 
     // 以宽度为准，设置缩放比率
     let ratio = screenWidth / targetWidth; // 默认比例，以宽度为准

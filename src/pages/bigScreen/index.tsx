@@ -1,5 +1,5 @@
 import type React from 'react';
-import { scalePage } from '../../utils/useScalePage';
+import { scalePage } from '@/utils/useScalePage';
 import { useEffect, useRef } from 'react';
 import PieChart from './components/Pie';
 import Line from './components/Line';
@@ -25,36 +25,34 @@ const Charts: React.FC = () => {
   }, []);
 
   return (
-    <div
-      ref={scaleDom}
-      className='screen-container'>
-      <div className='screen-bg'>
-        <div className='screen-content'>
-          <div className='top'></div>
-          <div className='left'>
-            <div className='left-top'>
+    <div ref={scaleDom} className="screen-container">
+      <div className="screen-bg">
+        <div className="screen-content">
+          <div className="top"></div>
+          <div className="left">
+            <div className="left-top">
               <PieChart />
             </div>
-            <div className='left-bottom'>
+            <div className="left-bottom">
               <Line />
             </div>
           </div>
-          <div className='center'>
-            <div className='center-top'>
+          <div className="center">
+            <div className="center-top">
               <Summary />
             </div>
-            <div className='center-bottom'>
+            <div className="center-bottom">
               <Count />
             </div>
           </div>
-          <div className='right'>
-            <div className='right-top'>
+          <div className="right">
+            <div className="right-top">
               <Ball />
             </div>
-            <div className='right-middle'>
+            <div className="right-middle">
               <Bar />
             </div>
-            <div className='right-bottom'>
+            <div className="right-bottom">
               <Error />
             </div>
           </div>
