@@ -15,6 +15,14 @@ export default defineConfig({
     react(),
     viteMockServe({
       mockPath: './src/api/mock',
+      localEnabled: true,
+      prodEnabled: true,
+      supportTs: true,
+      logger: true,
+      injectCode: `
+        import { setupProdMockServer } from './src/mockProdServer';
+        setupProdMockServer();
+      `,
     }),
   ],
   // 共享别名配置
